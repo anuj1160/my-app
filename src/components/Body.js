@@ -33,30 +33,16 @@ const Body = () => {
             placeholder="Search Robo "
             value={searchText}
             onChange={(e) => {
-              setSearchText(e.target.value)
-              const findRobo = listOfRobo.filter((robo) =>
-                robo.name.toLowerCase().includes(searchText.toLowerCase())
-                
-              );
-              setFilterRobo(findRobo);
+              const searchTerm = e.target.value;
+              setSearchText(searchTerm);
 
-            }
-        
-            }
-          />
-        
-          {/* <button
-            className="bg-green-500 text-white px-4 py-2 ml-2 rounded-lg hover:bg-green-600 focus:outline-none focus:ring focus:border-green-300"
-            onClick={() => {
               const findRobo = listOfRobo.filter((robo) =>
-                robo.name.toLowerCase().includes(searchText.toLowerCase())
+                robo.name.toLowerCase().includes(searchTerm.toLowerCase())
               );
 
               setFilterRobo(findRobo);
             }}
-          >
-            Search
-          </button> */}
+          />
         </div>
       </div>
       <div className="flex flex-wrap justify-center">
